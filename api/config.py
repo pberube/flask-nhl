@@ -11,7 +11,7 @@ class Config:
     API_ID = 'PB'
     #GOOGLE_CLIENT_ID = "597475379894-43rmbt2p48s38c0i8lmginn33ki16nop.apps.googleusercontent.com"
     SIGNATURE = "8e5089e8-0141-48b5-a955-1b678dfac08c"
-    SWAGGER_ENABLE = '0'
+    SWAGGER_ENABLE = '1'
     MYSQL_DB = 'nhl_games_service'
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://microservice:AXES-DB-Microservice-Manager@127.0.0.1:3306/' + MYSQL_DB
     SQLALCHEMY_TRACK_MODIFICATIONS = False

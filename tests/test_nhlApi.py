@@ -15,6 +15,11 @@ class TestNhlApi(TestCase):
 
     def test_get_box_score(self):
         box_score = get_box_score(2018021155)
-        measured = pretty_box_score(box_score)
-        expected = '3rd Final Buffalo Sabres 4 (27 shots, 16 hits) vs Montréal Canadiens 7 (44 shots, 30 hits)'
-        self.assertEqual(expected, measured)
+        pretty = pretty_box_score(box_score)
+        expected = {"period": "3rd",
+                    "remaining": "Final",
+                    "home": {"team": "Montr\u00e9al Canadiens", "goals": 7, "shot_on_goal": 44, "hits": 30, "power_play": False},
+                    "away": {"team": "Buffalo Sabres", "goals": 4, "shot_on_goal": 27, "hits": 16, "power_play": False}}
+        self.assertDictEqual(expected, box_score)
+        self.assertEqual('3rd Final Buffalo Sabres 4 (27 shots, 16 hits) vs Montréal Canadiens 7 (44 shots, 30 hits)', pretty)
+
