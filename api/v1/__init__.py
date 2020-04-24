@@ -20,7 +20,7 @@ api_v1 = Api(blueprint_api_v1,
              description="NHL Today's Games.",
              authorizations=authorizations,
              security='authorization_key',
-             doc='/' if current_config.SWAGGER_ENABLE == '1' else ''
+             doc='/' if current_config.SWAGGER_ENABLE == '1' else '/'
              )
 
 # Add namespace to api

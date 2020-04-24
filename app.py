@@ -5,19 +5,27 @@ from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 from api.v1 import blueprint_api_v1, api_v1
 from api import create_app, db
+from web import blueprint_web
 
 app = create_app()
 app.register_blueprint(blueprint_api_v1, url_prefix="/api/v1")
+app.register_blueprint(blueprint_web, url_prefix="/")
 app.app_context().push()
 
 manager = Manager(app)
 migrate = Migrate(app, db)
 manager.add_command('db', MigrateCommand)
 
+
 if app.config['SWAGGER_ENABLE'] == '1':
-    @app.route("/")
-    def index():
+    @app.route("/swagger")
+    def index_swagger():
         return redirect(url_for('api_v1.doc'))
+
+
+@app.route("/")
+def index():
+    return redirect(url_for('web.views'))
 
 
 @manager.command

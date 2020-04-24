@@ -5,6 +5,7 @@ from flask_cors import CORS
 
 from api.config import current_config
 
+# Create object instances of extensions
 db = SQLAlchemy()
 bcrypt = Bcrypt()
 cors = CORS()

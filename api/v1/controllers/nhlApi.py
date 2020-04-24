@@ -75,3 +75,19 @@ def get_box_score(game_id):
     current_data = parse_box_score(game_feed)
     return current_data
 
+
+def who_score(date, team):
+    scorers = list()
+    u = 'https://statsapi.web.nhl.com/api/v1/game/{0}/feed/live'.format(date)
+    r = get(u)
+    game_feed = r.json()
+    players =  game_feed['liveData']['boxscore']['teams'][team]['players']
+    for p in players:
+        name = players[p]['person']['fullName']
+        if players[p]['stats'] and len(players[p]['stats']) != 0:
+            if 'skaterStats' in players[p]['stats'].keys():
+                stats = players[p]['stats']['skaterStats']
+                if stats['goals'] > 0 or stats['assists'] > 0:
+                    scorers.append({name: {'goals': stats['goals'], 'assists': stats['assists']}})
+    return scorers
+
