@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NHL Games</title>
+</head>
+<body>
+    <h1>Tonight's NHL Games</h1>
+    <p>{{ boxscore }}</p>
+    <p>
+        Period: {{ boxscore['period'] }}<br>
+        Remaining: {{ boxscore['remaining'] }}
+    <p>
+        <b>Home Team:</b><br>
+            {{ boxscore['home']['team'] }}<br>
+            Goals: {{ boxscore['home']['goals'] }}<br>
+            Shots: {{ boxscore['home']['shot_on_goal'] }}<br>
+            Hits:  {{ boxscore['home']['hits'] }}<br>
+        </p>
+    <p>
+        <b>Away Team:</b><br>
+            {{ boxscore['away']['team'] }}<br>
+            Goals: {{ boxscore['away']['goals'] }}<br>
+            Shots: {{ boxscore['away']['shot_on_goal'] }}<br>
+            Hits:  {{ boxscore['away']['hits'] }}<br>
+        </p>
+    </p>
+</body>
+</html>

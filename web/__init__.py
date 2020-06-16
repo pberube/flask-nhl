@@ -8,3 +8,4 @@ blueprint_web = Blueprint(
      static_folder='static')
 
 from .views import home
+from .views import nhl

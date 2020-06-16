@@ -18,12 +18,12 @@ Backend exploration with flask without database
 ## Endpoints  
 |Endpoint|Method|Parameters|Description|
 |:-|:-|:-|:-|
+|/|GET|none|Get home page|
 |/swagger|GET|none|Get the swagger page of the api|
 |/nhl/games/count|GET|none|Get the number of games today|
 |/nhl/games/boxscore/{gameId}|GET|date of the game|Get the scoreboard of a game|
 |/nhl/games/away/scorers/{gameId}|GET|List of scorers for the away team|
 |/nhl/games/home/scorers/{gameId}|GET|List of scorers for the home team|
-|/|GET|none|Get home page|
 
 ## Day 1
 * put file structure in place for restful api
@@ -41,3 +41,5 @@ Backend exploration with flask without database
 * add a second blueprint for handling a web page
 * redirect `/` to a hello world web page
 * redirect `/swagger` to the swagger page as `/api/v1`
+## Day 3
+* trying to add a page with the boxscore of a game
