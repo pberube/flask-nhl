@@ -5,6 +5,6 @@ Flask-Script==2.0.6
 flask-restplus==0.12.1
 Flask-Migrate==2.4.0
 Flask-Bcrypt==0.7.1
-Flask-Cors==3.0.7
+Flask-Cors==3.0.9
 Flask-Testing==0.7.1
 Requests==2.21.0
